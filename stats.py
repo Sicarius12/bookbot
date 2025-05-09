@@ -20,3 +20,22 @@ def get_num_characters(filepath):
             character_dict[character] = 1
 
     return character_dict
+
+def sort_on(dict):
+    return dict["num"]
+
+def get_sorted_dictionary(filepath):
+    character_dict = get_num_characters(filepath)
+    dictionary_list = []
+    
+    # for character in character_dict:
+    #     count = character_dict[character]
+    #     dictionary_list.append({"char": character, "num": count})
+
+    for key, value in character_dict.items():
+        if key.isalpha():
+            dictionary_list.append({"char": key, "num": value})
+
+    dictionary_list.sort(reverse=True, key=sort_on)
+
+    return dictionary_list
