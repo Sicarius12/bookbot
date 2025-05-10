@@ -27,7 +27,7 @@ def sort_on(dict):
 def get_sorted_dictionary(filepath):
     character_dict = get_num_characters(filepath)
     dictionary_list = []
-    
+
     # for character in character_dict:
     #     count = character_dict[character]
     #     dictionary_list.append({"char": character, "num": count})
@@ -39,3 +39,14 @@ def get_sorted_dictionary(filepath):
     dictionary_list.sort(reverse=True, key=sort_on)
 
     return dictionary_list
+
+# def get_sorted_dictionary(filepath):
+#     character_dict = get_num_characters(filepath)
+
+#     # This returns a list of tuples (character, count) sorted by count
+#     sorted_items = sorted(character_dict.items(), key=lambda x: x[1], reverse=True)
+
+#     # Filter to only include alphabetical characters
+#     alpha_items = [item for item in sorted_items if item[0].isalpha()]
+
+    return alpha_items
