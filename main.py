@@ -3,9 +3,15 @@ from stats import get_num_characters
 from stats import get_sorted_dictionary
 
 def main():
-    num_words = get_num_words("./books/frankenstein.txt")
+    import sys
+
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
+    num_words = get_num_words(sys.argv[1])
     #num_characters = get_num_characters("./books/frankenstein.txt")
-    num_characters_sorted = get_sorted_dictionary("./books/frankenstein.txt")
+    num_characters_sorted = get_sorted_dictionary(sys.argv[1])
     # print(f"{num_words} words found in the document")
     # print(num_characters_sorted)
 
